@@ -22,6 +22,17 @@ public class Program
         Console.WriteLine("\nLotto Results");
 
         int[] tickets = new int [data.Count];
-        int[] winningsMoney = new int[data.Count];
-    }
+        decimal [] winningsMoney = new decimal [data.Count];
+
+        for (int i = 0; i < data.Count; i++)
+        {
+            var ranks = String.Join (", ", data[i].Ranks);
+            Console.WriteLine($"Drawing {drawing}:");
+
+            for (int i = 0; i < data.Count; i++)
+            {
+                decimal money = tickets[i] * random.Next(1, 101);
+                winnings[i] += money;
+            }
+        }
 }
